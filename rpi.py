@@ -5,15 +5,17 @@ import random
 
 from deps import *
 
+from decouple import config
+
 # GCP parameters 
-project_id = 'qualis-c1bec'  # Your project ID.
-registry_id = 'speed-registry'  # Your registry name.
-device_id = 'esp8266'  # Your device name.
+project_id = config('PROJECT')  # Your project ID.
+registry_id = config('REGISTRY')  # Your registry name.
+device_id = config('DEVICE_ID')  # Your device name.
 private_key_file = 'ec_private.pem'  # Path to private key.
 algorithm = 'ES256'  # Authentication key format.
-cloud_region = 'us-central1'  # Project region.
+cloud_region =  config('REGION') # Project region.
 ca_certs = 'roots.pem'  # CA root certificate path.
-mqtt_bridge_hostname = 'mqtt.googleapis.com'  # GC bridge hostname.
+mqtt_bridge_hostname = "mqtt.googleapis.com"  # GC bridge hostname.
 mqtt_bridge_port = 8883  # Bridge port.
 message_type = 'event'  # Message type (event or state).
 

@@ -107,9 +107,9 @@ def main():
     client.on_connect = device.on_connect
     client.on_publish = device.on_publish
     client.on_disconnect = device.on_disconnect
-    #client.on_subscribe = device.on_subscribe
-    #client.on_message = device.on_message
-    #client.connect(mqtt_bridge_hostname, mqtt_bridge_port)
+    client.on_subscribe = device.on_subscribe
+    client.on_message = device.on_message
+    client.connect(mqtt_bridge_hostname, mqtt_bridge_port)
     client.loop_start()
 
     mqtt_telemetry_topic = '/devices/{}/events'.format(device_id)

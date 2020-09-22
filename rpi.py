@@ -124,7 +124,6 @@ def main():
     try:        
         while True:
             speed = random.randint(0,80)
-            device.update_led_state()
             if True:   
                 currentTime = datetime.datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')
                 num_message += 1

@@ -1,12 +1,7 @@
-import datetime
 import json
 import os
 import ssl
-import time
 import random
-
-import jwt
-import paho.mqtt.client as mqtt
 
 from deps import *
 
